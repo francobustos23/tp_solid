@@ -9,7 +9,7 @@ import vehicleRoutes from './routes/vehicle.routes';
 
 export class Server {
     private app: Application;
-    private port: number;
+    private port: number; 
 
     constructor() {
         this.app = express();
