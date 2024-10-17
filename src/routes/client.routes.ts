@@ -9,21 +9,21 @@ const clientRepository = new ClientPostgresRepository();
 const clientService = new ClientService(clientRepository);
 const clientController = new ClientController(clientService);
 
-router.post('/clients', 
-    (req,res) => {
-    clientController.create(req,res);       
-});
+router.post('/clients',
+    (req, res) => {
+        clientController.create(req, res);
+    });
 router.get('/clients/:id',
-    (req,res) => {
-    clientController.findById(req,res);
-});
+    (req, res) => {
+        clientController.findById(req, res);
+    });
 router.put('/clients/:id',
-    (req,res) => {
-    clientController.update(req,res);
-});
+    (req, res) => {
+        clientController.update(req, res);
+    });
 router.delete('/clients/:id',
-    (req,res) => {
-    clientController.delete(req,res);
-});
+    (req, res) => {
+        clientController.delete(req, res);
+    });
 
 export default router;
