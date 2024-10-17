@@ -1,8 +1,11 @@
-import cors from 'cors'
-import helmet from 'helmet'
-import morgan from 'morgan'
-import express, { Application } from 'express'
-import clientRoutes from './routes/client.routes'
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import express, { Application } from 'express';
+import { envsSQL } from './environments/environments';
+//Routes
+import clientRoutes from './routes/client.routes';
+import vehicleRoutes from './routes/vehicle.routes';
 
 export class Server {
     private app: Application;
@@ -10,7 +13,7 @@ export class Server {
 
     constructor() {
         this.app = express();
-        this.port = 3000;
+        this.port = envsSQL.PORT;
 
         this.middleweares();
         this.routes();
@@ -25,6 +28,7 @@ export class Server {
 
     routes() {
         this.app.use('/api', clientRoutes);
+        this.app.use('/api', vehicleRoutes);
     }
 
     public listen(): void {
