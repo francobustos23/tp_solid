@@ -29,8 +29,8 @@ export class ClientController {
         const {id} = req.params;
         const client = await this.clientService.findClientById(id);
 
-        if(client) { res.status(200).json(client)}
-        else       {res.status(404).send('Client not found')}
+        if(client){ res.status(200).json(client)}
+        else{res.status(404).send('Client not found')}
     }
 
     async update(
@@ -49,6 +49,6 @@ export class ClientController {
     ) {
         const {id} = req.params;
         await this.clientService.deleteClient(id);
-        res.status(200).send('Client deleted')
+        res.status(200).send('Client deleted');
     }
 }
