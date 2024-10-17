@@ -9,7 +9,7 @@ export interface IVehicleRepository {
         Promise<Ivehicle | null>;
 
     update(id: string, vehicle: Ivehicle):
-        Promise<void>
+        Promise<void>;
 
     delete(id: string):
         Promise<void>;
